@@ -1,0 +1,12 @@
+h1, h2 {
+  font-family: Lato;
+}
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  grid-gap: 15px;
+}
+
+img {
+  width: 100%;
+}
