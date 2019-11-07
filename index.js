@@ -1,7 +1,6 @@
 // Import stylesheets
 import './style.css';
 
-
 // Write Javascript code!
 const app = document.getElementById('app');
 
@@ -12,9 +11,10 @@ var request = new XMLHttpRequest();
 request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
 
 request.onload = function() {
-  // Begin accessing JSON data here
+  // Begin accessing JSON data
   var data = JSON.parse(this.response);
   
+  // Check if request status was successful
   if (request.status >= 200 && request.status < 400) {
     data.forEach(movie => {
       const card = document.createElement('div');
@@ -41,6 +41,7 @@ request.onload = function() {
 
     })
   } else {
+    // Request was no successful, console log error.
     console.log('error');
   }
 }
